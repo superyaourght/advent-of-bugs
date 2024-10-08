@@ -39,26 +39,20 @@ int main() {
     switch (c) {
     case '>':
         x++;
-        line = to_string(x) + ' ' + to_string(y);
-        write_line(filename, line);
         break;
     case '<':
         x--;
-        line = to_string(x) + ' ' + to_string(y);
-        write_line(filename, line);
         break;
     case '^':
         y++;
-        line = to_string(x) + ' ' + to_string(y);
-        write_line(filename, line);
         break;
     default:
         y--;
-        line = to_string(x) + ' ' + to_string(y);
-        write_line(filename, line);
         break;
     }
     line = "";
+    line = to_string(x) + ' ' + to_string(y);
+    write_line(filename, line);
   }
 
   return 0;
@@ -98,52 +92,43 @@ int main() {
     case '>':
         if (is_santa_turn) {
           santa_x++;
-          line = to_string(santa_x) + ' ' + to_string(santa_y);
-          write_line(filename, line);
         } else {
           robot_x++;
-          line = to_string(robot_x) + ' ' + to_string(robot_y);
-          write_line(filename, line);
         }
         break;
 
     case '<':
         if (is_santa_turn) {
           santa_x--;
-          line = to_string(santa_x) + ' ' + to_string(santa_y);
-          write_line(filename, line);
         } else {
           robot_x--;
-          line = to_string(robot_x) + ' ' + to_string(robot_y);
-          write_line(filename, line);
         }
         break;
 
     case '^':
         if (is_santa_turn) {
           santa_y++;
-          line = to_string(santa_x) + ' ' + to_string(santa_y);
-          write_line(filename, line);
         } else {
           robot_y++;
-          line = to_string(robot_x) + ' ' + to_string(robot_y);
-          write_line(filename, line);
         }
         break;
 
     default:
         if (is_santa_turn) {
           santa_y--;
-          line = to_string(santa_x) + ' ' + to_string(santa_y);
-          write_line(filename, line);
         } else {
           robot_y--;
-          line = to_string(robot_x) + ' ' + to_string(robot_y);
-          write_line(filename, line);
         }
         break;
     }
     line = "";
+    line = to_string(santa_x) + ' ' + to_string(santa_y);
+    write_line(filename, line);
+
+    line = "";
+    line = to_string(robot_x) + ' ' + to_string(robot_y);
+    write_line(filename, line);
+
     is_santa_turn = !is_santa_turn;
   }
 
