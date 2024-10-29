@@ -2,7 +2,7 @@ import hashlib
 import sys
 
 #using python for this challenge because i don't want to pull my hair out while using homebrew and trying to configure openssl
-#correct and output is 254575
+#correct and output is 1038736
 def main():
     secret_key: str = "bgvyzdsv"
 
